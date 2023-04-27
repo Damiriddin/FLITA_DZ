@@ -22,7 +22,7 @@ def output(set_arg):
 
 def add_el(set_arg):
     while True:
-        add_el = input("Enter adding element: ")
+        add_el = input("Enter the adding element: ")
         if add_el == '':
             return set_arg
         else:
@@ -34,7 +34,7 @@ def add_el(set_arg):
 def del_el(set_arg):        
     del_el=1
     while del_el != '':
-        del_el=input("Enter deleting element: ")
+        del_el=input("Enter the deleting element: ")
         if del_el in set_arg:
             set_arg.discard(del_el)
         elif not (del_el in set_arg) and del_el != '':
@@ -47,13 +47,13 @@ def del_el(set_arg):
 # recursive FUCTION
 def answ_func():
         global answ   
-        answ = input("Хотите продолжить 'да'или'нет': ")
-        if answ == 'нет' or answ == 'НЕТ':
+        answ = input("Do you want to continue: ")
+        if answ == 'No' or answ == 'no':
             answ = False
-        elif answ == 'да' or answ == 'ДА':
+        elif answ == 'Yes' or answ == 'yes':
             answ = True
         else: 
-            print("Неверный ввод ответа! Повторите ещё раз!")
+            print("Incorrect input repeat again!")
             answ_func()
 
 
@@ -62,35 +62,35 @@ def answ_func():
 answ = True
 while answ:    
     #CREATE() 
-    print("Задаём первое множество")
+    print(" Entering of first set. ")
     set1 = create(set1)
-    print("Задаём второе множество")
+    print("Enterof second set.")
     set2 = create(set2)
     #OUTPUT()
-    print("Первое множество: ")
+    print("First set: ")
     output(set1)
-    print("Второе множество: ")
+    print("Second set: ")
     output(set2)
 
 
     #ADD_EL()
-    print("Добавляем элементы в первое множество: ")
+    print("Adding elements to set1: ")
     set1 = add_el(set1)
-    print("Добавляем элементы во второе множество: ")
+    print("Adding elements to set2: ")
     set2=add_el(set2)
 
 
     #DEL_EL()
-    print("Удаляем из первого множества: ")
+    print("Deleting elements from set1: ")
     set1 = del_el(set1)
-    print("Удаляем из второго множества: ")
+    print("Deleting elements from set2:")
     set2 = del_el(set2)
 
 
     #OUTPUT()
-    print("Изменённое первое множество: ")
+    print("Modified first set: ")
     output(set1)
-    print("Изменённое второе множество: ")
+    print("Modified second set: ")
     output(set2)
     answ_func()
 
